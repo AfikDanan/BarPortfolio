@@ -1,0 +1,71 @@
+[
+    {
+        "id": "1",
+        "title": "CyberInt Security Dashboard",
+        "client": "CyberInt (CheckPoint Company)",
+        "description": "Comprehensive cybersecurity threat intelligence platform with real-time monitoring and analytics",
+        "overview": "Led the design and UI/UX overhaul of the complex system UI for the company's SaaS platform, integrating advanced UX solutions tailored to customer needs and feedback to deliver a modern and innovative design under tight deadlines.",
+        "role": "UX/UI Designer",
+        "process": "Collaborated closely with stakeholders and the company's designer to ensure the design aligned with customer expectations and business goals.",
+        "tools": [
+            "Figma",
+            "Photoshop",
+            "Adobe Creative Suite"
+        ],
+        "impact": "Reduced analyst response time by 40% and increased user satisfaction scores by 65%",
+        "imageUrl": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "detailImages": [
+            "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/590022/pexels-photo-590022.jpg?auto=compress&cs=tinysrgb&w=800"
+        ],
+        "category": "complex-systems",
+        "year": "2024",
+        "featured": true
+    },
+    {
+        "id": "2",
+        "title": "Engineer Sandbox Platform",
+        "client": "Israel Electric Corporation",
+        "description": "Interactive testing environment for electrical engineers with advanced simulation capabilities",
+        "overview": "Led the design of a sandbox workspace for engineers, overcoming significant challenges to create an intuitive and efficient tool that streamlined their workflows.",
+        "role": "UX/UI Designer",
+        "process": "Stakeholder interviews, task analysis, iterative design, prototype validation",
+        "tools": [
+            "Figma",
+            "Illustrator",
+            "Principle"
+        ],
+        "impact": "Improved testing efficiency by 50% and reduced system implementation errors by 30%",
+        "imageUrl": "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "detailImages": [
+            "https://images.pexels.com/photos/256219/pexels-photo-256219.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ],
+        "category": "complex-systems",
+        "year": "2024",
+        "featured": true
+    },
+    {
+        "id": "3",
+        "title": "Bulwarx Internal Portal",
+        "client": "Bulwarx Security",
+        "description": "Complete redesign of internal management portal with enhanced user experience and workflow optimization",
+        "overview": "Transformed a complex internal system into an intuitive platform that streamlined daily operations for security personnel by designing the inner portal with a focus on enhancing user experience and interface aesthetics to support secure and efficient workflows.",
+        "role": "UX/UI Designer",
+        "process": "Collaborated closely with stakeholders to understand requirements and ensure alignment with company goals.",
+        "tools": [
+            "Figma",
+            "Photoshop",
+            "Zeplin"
+        ],
+        "impact": "Led to contract renewal and 45% reduction in training time for new users",
+        "imageUrl": "https://images.pexels.com/photos/586062/pexels-photo-586062.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "detailImages": [
+            "https://images.pexels.com/photos/270348/pexels-photo-270348.jpg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/586062/pexels-photo-586062.jpeg?auto=compress&cs=tinysrgb&w=800"
+        ],
+        "category": "web",
+        "year": "2025",
+        "featured": false
+    }
+]

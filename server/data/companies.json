@@ -1,0 +1,37 @@
+[
+    {
+        "id": "cyberint",
+        "name": "CyberInt",
+        "logoUrl": "/static/logos/Cyberint.png",
+        "altText": "CyberInt - Cybersecurity threat intelligence platform",
+        "website": "https://cyberint.com"
+    },
+    {
+        "id": "israel-electric",
+        "name": "Israel Electric Corporation",
+        "logoUrl": "/static/logos/IEC.png",
+        "altText": "Israel Electric Corporation - National electric utility company",
+        "website": "https://iec.co.il"
+    },
+    {
+        "id": "bulwarx",
+        "name": "Bulwarx Security",
+        "logoUrl": "/static/logos/Bulwarx.png",
+        "altText": "Bulwarx Security - Comprehensive security solutions",
+        "website": "https://bulwarx.com"
+    },
+    {
+        "id": "ginegar",
+        "name": "Ginegar",
+        "logoUrl": "/static/logos/Ginegar.jpeg",
+        "altText": "Ginegar - Technology and cloud services",
+        "website": "https://microsoft.com"
+    },
+    {
+        "id": "salesforce",
+        "name": "Salesforce",
+        "logoUrl": "/static/logos/Salesforce.png",
+        "altText": "Salesforce",
+        "website": "https://salesforce.com"
+    }
+]

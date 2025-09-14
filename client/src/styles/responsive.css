@@ -1,0 +1,71 @@
+/* Additional responsive optimizations for company logos section */
+
+/* Ensure touch targets are at least 44px for better mobile accessibility */
+@media (max-width: 640px) {
+    .company-logo-container {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Optimize text sizes for mobile readability */
+    .company-logo-fallback-text {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+
+        .company-logo-container,
+        .company-logo-container * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .company-logos-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1025px) {
+    .company-logos-grid {
+        gap: 2rem;
+    }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .company-logo-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+    .company-logo-container {
+        background-color: rgba(31, 41, 55, 0.8);
+        border-color: rgba(75, 85, 99, 0.6);
+    }
+}
+
+/* Focus styles for better keyboard navigation */
+.company-logo-container:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Improve contrast for better accessibility */
+@media (prefers-contrast: high) {
+    .company-logo-container {
+        border-width: 2px;
+        border-color: #000;
+    }
+}
