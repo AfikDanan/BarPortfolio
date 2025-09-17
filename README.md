@@ -1,144 +1,86 @@
-# Bar Portfolio - Node.js Version
+# Bar Tal - UX/UI Designer Portfolio
 
-A modern portfolio website built with Node.js, Express backend, and React frontend.
+A modern, responsive portfolio website showcasing UX/UI design work and professional experience.
 
-## ✅ Project Status: Clean & Optimized
+## Overview
 
-The project has been thoroughly cleaned and optimized for production use.
-
-### 🧹 Cleanup Summary
-- ✅ Removed unused components and dependencies
-- ✅ Cleaned up debugging logs and console statements
-- ✅ Optimized import statements
-- ✅ Updated .gitignore for better file management
-- ✅ Streamlined project structure
-
-## Project Structure
-
-```
-BarPortfolio/
-├── server/                 # Express.js backend
-│   ├── index.js           # Main server file
-│   └── data/              # Server data files
-│       └── projects.json  # Projects data
-├── client/                # React frontend
-│   ├── public/            # Static files
-│   ├── src/               # React source code
-│   │   ├── components/    # React components
-│   │   ├── hooks/         # Custom hooks
-│   │   ├── types/         # TypeScript types
-│   │   ├── data/          # Data files
-│   │   ├── App.tsx        # Main App component
-│   │   └── index.tsx      # React entry point
-│   ├── package.json       # Client dependencies
-│   └── tailwind.config.js # Tailwind configuration
-├── package.json           # Server dependencies
-└── README.md             # This file
-```
+This portfolio website features a clean, professional design with smooth animations and interactive elements. Built with modern web technologies, it provides an engaging way to showcase design projects, work experience, and professional capabilities.
 
 ## Features
 
-- **Express.js Backend**: RESTful API endpoints for projects
-- **React Frontend**: Modern UI with TypeScript and Tailwind CSS
-- **Real-time Data**: Projects fetched from API
-- **Responsive Design**: Mobile-first approach
-- **Admin Panel**: Toggle for admin functionality
-- **Smooth Animations**: Framer Motion integration
-- **Particle Background**: Interactive background effects
+- **Responsive Design** - Optimized for all devices and screen sizes
+- **Interactive Animations** - Smooth transitions and hover effects using Framer Motion
+- **Company Logos Carousel** - Horizontal scrolling showcase of trusted companies
+- **Project Gallery** - Filterable portfolio of design work
+- **Contact Integration** - Easy ways to get in touch
+- **Admin Panel** - Content management capabilities
 
-## 🚀 Quick Start
+## Tech Stack
 
-### Development Mode
+**Frontend:**
+- React 18 with TypeScript
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Axios for API communication
 
-1. **Install all dependencies:**
+**Backend:**
+- Node.js with Express
+- RESTful API endpoints
+- Static file serving
+- CORS and security middleware
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
    ```bash
    npm run install-all
    ```
 
-2. **Start both server and client:**
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-This will start:
-- Express server on `http://localhost:5001`
-- React development server on `http://localhost:3000`
+The application will be available at:
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:5001`
 
-### Production Mode
+### Production Build
 
-1. **Build the React app:**
-   ```bash
-   npm run build
-   ```
+```bash
+npm run build
+npm start
+```
 
-2. **Start the production server:**
-   ```bash
-   npm start
-   ```
+## Project Structure
 
-The application will be available at `http://localhost:5000`
+```
+├── client/          # React frontend application
+├── server/          # Express.js backend API
+├── package.json     # Root dependencies and scripts
+└── README.md        # Project documentation
+```
 
 ## API Endpoints
 
-- `GET /api/projects` - Get all projects
-- `POST /api/projects` - Create a new project
-- `PUT /api/projects/:id` - Update a project
-- `DELETE /api/projects/:id` - Delete a project
+- `GET /api/projects` - Retrieve portfolio projects
+- `GET /api/companies` - Get company logos data
+- `POST /api/projects` - Create new project (admin)
+- `PUT /api/projects/:id` - Update project (admin)
+- `DELETE /api/projects/:id` - Delete project (admin)
 
-## Technologies Used
+## License
 
-### Backend
-- Node.js
-- Express.js
-- CORS
-- Helmet (Security)
-- Morgan (Logging)
+This project is for portfolio demonstration purposes.
 
-### Frontend
-- React 18
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Lucide React (Icons)
-- Axios (HTTP client)
+---
 
-## Development Scripts
-
-- `npm run dev` - Start both server and client in development
-- `npm run server` - Start only the Express server
-- `npm run client` - Start only the React client
-- `npm run build` - Build the React app for production
-- `npm start` - Start the production server
-- `npm run install-all` - Install dependencies for both server and client
-
-## Environment Variables
-
-Create a `.env` file in the root directory:
-```env
-PORT=5001
-NODE_ENV=development
-```
-
-## Deployment
-
-The application is ready for deployment on platforms like:
-- Heroku
-- Vercel
-- Railway
-- DigitalOcean App Platform
-
-Make sure to set the `NODE_ENV=production` environment variable in production.
-
-## Migration Notes
-
-This project was converted from Next.js to Node.js. Key changes:
-- Removed Next.js specific features (SSR, file-based routing)
-- Added Express.js backend with REST API
-- Moved React components to separate client directory
-- Updated import paths and routing
-- Added proxy configuration for development
-- Implemented static file serving for production
-
-## 🎉 Success!
-
-The conversion is complete and the application is ready to run! The portfolio maintains all its original functionality while now running on a Node.js backend with a React frontend.
+**Bar Tal** - UX/UI Product Designer  
+*Turning complexity into clarity – UX/UI for mission-critical systems*
