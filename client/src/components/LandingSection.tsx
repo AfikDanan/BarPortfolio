@@ -18,7 +18,7 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
   };
 
   return (
-    <section id="landing" className="min-h-screen bg-white flex items-center justify-center bg-opacity-10 py-8">
+    <section id="landing" className="min-h-screen bg-white flex items-center justify-center bg-opacity-10 py-12">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-6 animate-fade-in">
           {/* Main Headline */}
@@ -36,9 +36,6 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
             <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
               Turning complexity into clarity –
               <span className="font-semibold text-gray-900"> UX/UI for mission-critical systems</span>
-            </p>
-            <p className="text-sm sm:text-base text-gray-600 mt-3">
-              3 years of experience designing intuitive interfaces for cybersecurity and engineering platforms
             </p>
           </div>
 
@@ -63,7 +60,7 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
           </div>
 
           {/* Statistics */}
-          <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto pt-6">
+          <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto pt-2">
             <div className="text-center">
               <div className="text-xl sm:text-2xl font-bold text-blue-600">3+</div>
               <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
@@ -79,11 +76,11 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
           </div>
 
           {/* Company Logos Carousel */}
-          <div className="pt-6">
-            <div className="relative w-full max-w-4xl mx-auto">
-              <CompanyLogosCarousel />
-            </div>
+
+          <div className="relative w-full max-w-4xl mx-auto">
+            <CompanyLogosCarousel />
           </div>
+
         </div>
 
         {/* Scroll Indicator */}

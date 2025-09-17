@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Company } from '../types/Company';
 import { CompanyLogo } from './CompanyLogo';
+import '../styles/responsive.css';
 
 /**
  * Horizontal scrolling carousel component for displaying company logos
@@ -119,7 +120,7 @@ export const CompanyLogosCarousel: React.FC = () => {
             {/* Scrollable Container */}
             <div
                 ref={scrollContainerRef}
-                className="flex space-x-8 overflow-x-auto scrollbar-hide py-6 px-4"
+                className="flex space-x-8 scrollbar-hide carousel-container py-6 px-4"
                 style={{
                     scrollBehavior: 'auto'
                 }}

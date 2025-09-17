@@ -1,21 +1,54 @@
 /* Additional responsive optimizations for company logos section */
 
-/* Hide scrollbars for carousel */
+/* Hide scrollbars for carousel - comprehensive approach */
 .scrollbar-hide {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    overflow: -moz-scrollbars-none;
+    /* Firefox (older versions) */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
     /* Chrome, Safari and Opera */
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+    display: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar-corner {
+    display: none;
 }
 
 /* Smooth scrolling for carousel */
 .smooth-scroll {
     scroll-behavior: smooth;
+}
+
+/* Specific carousel container styles */
+.carousel-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
 }
 
 /* Ensure touch targets are at least 44px for better mobile accessibility */
