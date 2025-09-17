@@ -34,7 +34,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 bg-white bg-opacity-10">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 bg-gray-100 bg-opacity-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-12 sm:space-y-16 lg:space-y-20">
           {/* Section Header */}
@@ -43,11 +43,6 @@ export const ContactSection: React.FC = () => {
             <div className="space-y-6 sm:space-y-8">
               <div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Get in Touch</h3>
-                <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl px-2 sm:px-0">
-                  I'm always excited to work on challenging projects that require thoughtful
-                  UX/UI design. Whether you need a complete system redesign or consultation
-                  on specific user experience challenges, I'd love to hear from you.
-                </p>
               </div>
 
               {/* Contact Methods */}

@@ -10,7 +10,7 @@ export const AboutSection: React.FC = () => {
     { icon: Lightbulb, number: '100%', label: 'Passion' }
   ];
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-gray-100 bg-opacity-90 relative bg-opacity-10">
+    <section id="about" className="min-h-screen flex items-center justify-center bg-gray-100 bg-opacity-50 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8">
           {/* Section Header */}
