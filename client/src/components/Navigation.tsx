@@ -20,7 +20,6 @@ export const Navigation: React.FC<NavigationProps> = ({
   const sections = [
     { id: 'landing', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'companies', label: 'Companies' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];

@@ -34,17 +34,16 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-20 bg-white bg-opacity-10">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-16 sm:py-20 lg:py-24 bg-white bg-opacity-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16 lg:space-y-20">
           {/* Section Header */}
-
-          <div className="text-center space-y-12">
+          <div className="text-center space-y-8 sm:space-y-12">
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-                <p className="text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Get in Touch</h3>
+                <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl px-2 sm:px-0">
                   I'm always excited to work on challenging projects that require thoughtful
                   UX/UI design. Whether you need a complete system redesign or consultation
                   on specific user experience challenges, I'd love to hear from you.
@@ -52,36 +51,58 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {/* Contact Methods */}
-              <div className="flex flex-row justify-between items-center max-w-3xl mx-auto">
-                <div className="flex flex-col items-center space-y-2 text-center w-32">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-blue-600" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 max-w-4xl mx-auto">
+                <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center p-4 sm:p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
                   </div>
-                  <div className="h-12 flex flex-col justify-center">
-                    <div className="font-semibold text-gray-900">Email</div>
-                    <div className="text-gray-600 text-sm">
-                      <a href="mailto:bar67896@gmail.com" className="hover:text-blue-600 transition-colors">bar67896@gmail.com</a>
+                  <div className="space-y-1 sm:space-y-2">
+                    <div className="font-semibold text-gray-900 text-base sm:text-lg">Email</div>
+                    <div className="text-gray-600 text-sm sm:text-base">
+                      <a
+                        href="mailto:bar67896@gmail.com"
+                        className="hover:text-blue-600 transition-colors break-all sm:break-normal"
+                      >
+                        bar67896@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center space-y-2 text-center w-32">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-emerald-600" />
+                <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center p-4 sm:p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-emerald-600" />
                   </div>
-                  <div className="h-12 flex flex-col justify-center">
-                    <div className="font-semibold text-gray-900">Phone</div>
-                    <div className="text-gray-600 text-sm">054-636-7054</div>
+                  <div className="space-y-1 sm:space-y-2">
+                    <div className="font-semibold text-gray-900 text-base sm:text-lg">Phone</div>
+                    <div className="text-gray-600 text-sm sm:text-base">
+                      <a
+                        href="tel:+972546367054"
+                        className="hover:text-emerald-600 transition-colors"
+                      >
+                        054-636-7054
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center space-y-2 text-center w-32">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <Linkedin className="w-6 h-6 text-purple-600" />
+                <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center p-4 sm:p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <Linkedin className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-purple-600" />
                   </div>
-                  <div className="h-12 flex flex-col justify-center">
-                    <div className="font-semibold text-gray-900">
-                      <a href="https://www.linkedin.com/in/bar-tal/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-colors">LinkedIn</a>
+                  <div className="space-y-1 sm:space-y-2">
+                    <div className="font-semibold text-gray-900 text-base sm:text-lg">
+                      <a
+                        href="https://www.linkedin.com/in/bar-tal/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-purple-600 transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                    <div className="text-gray-600 text-sm sm:text-base">
+                      Connect with me
                     </div>
                   </div>
                 </div>

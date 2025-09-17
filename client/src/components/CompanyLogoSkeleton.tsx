@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
  */
 export const CompanyLogoSkeleton: React.FC = () => {
     return (
-        <div className="bg-white rounded-lg border border-gray-200 p-3 sm:p-4 md:p-6">
-            <div className="w-full h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-5 md:p-6 shadow-sm">
+            <div className="w-full h-16 sm:h-18 md:h-20 flex items-center justify-center">
                 <motion.div
-                    className="w-20 h-8 bg-gray-200 rounded"
+                    className="w-24 h-10 bg-gray-200 rounded"
                     animate={{
                         opacity: [0.5, 1, 0.5],
                     }}

@@ -22,7 +22,7 @@ export const CompanyLogosSection: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [retryCount, setRetryCount] = useState(0);
     const shouldReduceMotion = useReducedMotion();
-    const { isMobile, isTablet, isTouchDevice } = useResponsive();
+    const { isMobile, isTouchDevice } = useResponsive();
 
     // Fetch companies data with retry functionality
     const fetchCompanies = useCallback(async () => {
@@ -47,7 +47,7 @@ export const CompanyLogosSection: React.FC = () => {
                     errorMessage = 'Request timed out. Please check your connection.';
                 } else if (error.response?.status === 404) {
                     errorMessage = 'Company data not found.';
-                } else if (error.response?.status >= 500) {
+                } else if (error.response && error.response.status >= 500) {
                     errorMessage = 'Server error. Please try again later.';
                 } else if (!navigator.onLine) {
                     errorMessage = 'No internet connection. Please check your network.';
@@ -181,7 +181,7 @@ export const CompanyLogosSection: React.FC = () => {
                             amount: isMobile ? 0.2 : 0.3
                         }}
                     >
-                        Trusted by Leading Companies
+                        Trusted by Leading a Companies
                     </motion.h2>
                     <motion.p
                         className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0"
@@ -284,21 +284,6 @@ export const CompanyLogosSection: React.FC = () => {
                             <motion.div
                                 key={company.id}
                                 variants={logoVariants}
-                                whileHover={shouldReduceMotion || isTouchDevice ? {} : {
-                                    scale: 1.02,
-                                    y: -1,
-                                    transition: {
-                                        duration: 0.2,
-                                        ease: "easeOut"
-                                    }
-                                }}
-                                whileTap={shouldReduceMotion ? {} : {
-                                    scale: isMobile ? 0.94 : 0.96, // More pronounced tap on mobile
-                                    transition: {
-                                        duration: isMobile ? 0.1 : 0.15, // Faster tap response on mobile
-                                        ease: "easeInOut"
-                                    }
-                                }}
                             >
                                 <CompanyLogo
                                     company={company}

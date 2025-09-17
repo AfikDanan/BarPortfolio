@@ -8,8 +8,22 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(helmet());
-app.use(cors());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https:"],
+            scriptSrc: ["'self'"],
+            imgSrc: ["'self'", "data:", "https:", "http:"], // Allow images from any source
+            fontSrc: ["'self'", "https:", "data:"],
+            connectSrc: ["'self'", "http://localhost:3000", "ws://localhost:3000"], // Allow dev server connections
+        },
+    },
+}));
+app.use(cors({
+    origin: process.env.NODE_ENV === 'production' ? false : ['http://localhost:3000'],
+    credentials: true
+}));
 app.use(morgan('dev')); // Use dev format for less verbose logging
 app.use(express.json());
 
@@ -20,6 +34,11 @@ if (process.env.NODE_ENV === 'production') {
 
 // Serve static files from client public directory (for both dev and production)
 app.use('/static', express.static(path.join(__dirname, '../client/public/static/')));
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 
 // API Routes
 app.get('/api/projects', (req, res) => {
@@ -81,6 +100,8 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
+}).on('error', (err) => {
+    console.error('Server failed to start:', err);
 });

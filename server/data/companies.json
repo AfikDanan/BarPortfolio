@@ -33,5 +33,12 @@
         "logoUrl": "/static/logos/Salesforce.png",
         "altText": "Salesforce",
         "website": "https://salesforce.com"
+    },
+    {
+        "id": "Nesspresso",
+        "name": "Nesspresso",
+        "logoUrl": "/static/logos/nesspresso.png",
+        "altText": "Nesspresso",
+        "website": "https://Nesspresso.com"
     }
 ]

@@ -3,11 +3,9 @@ import { Navigation } from './components/Navigation';
 import { ParticleBackground } from './components/ParticlesBackground';
 import { LandingSection } from './components/LandingSection';
 import { AboutSection } from './components/AboutSection';
-import { CompanyLogosSection } from './components/CompanyLogosSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
-import { ErrorBoundary } from './components/ErrorBoundary';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { Project } from './types';
@@ -76,14 +74,6 @@ function App() {
             <main className="relative z-10">
                 <LandingSection onSectionClick={handleSectionClick} />
                 <AboutSection />
-                <ErrorBoundary
-                    onError={(error, errorInfo) => {
-                        console.error('CompanyLogosSection Error:', error, errorInfo);
-                        // Could send to error reporting service here
-                    }}
-                >
-                    <CompanyLogosSection />
-                </ErrorBoundary>
                 <ProjectsSection
                     projects={projects}
                     onProjectClick={handleProjectClick}

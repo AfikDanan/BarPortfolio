@@ -1,5 +1,23 @@
 /* Additional responsive optimizations for company logos section */
 
+/* Hide scrollbars for carousel */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Smooth scrolling for carousel */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
 /* Ensure touch targets are at least 44px for better mobile accessibility */
 @media (max-width: 640px) {
     .company-logo-container {
@@ -48,24 +66,8 @@
     }
 }
 
-/* Dark mode support (if needed in future) */
-@media (prefers-color-scheme: dark) {
-    .company-logo-container {
-        background-color: rgba(31, 41, 55, 0.8);
-        border-color: rgba(75, 85, 99, 0.6);
-    }
-}
-
 /* Focus styles for better keyboard navigation */
 .company-logo-container:focus-visible {
     outline: 2px solid #3b82f6;
     outline-offset: 2px;
-}
-
-/* Improve contrast for better accessibility */
-@media (prefers-contrast: high) {
-    .company-logo-container {
-        border-width: 2px;
-        border-color: #000;
-    }
 }

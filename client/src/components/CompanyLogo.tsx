@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Company } from '../types/Company';
-import '../styles/responsive.css';
 
 interface CompanyLogoProps {
     /** Company data object containing logo and metadata */
@@ -11,9 +10,9 @@ interface CompanyLogoProps {
 }
 
 /**
- * Individual company logo component with hover effects and accessibility features
+ * Individual company logo component - simplified version with no borders or backgrounds
  */
-export const CompanyLogo: React.FC<CompanyLogoProps> = ({ company, index }) => {
+export const CompanyLogo: React.FC<CompanyLogoProps> = ({ company }) => {
     const [imageError, setImageError] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const shouldReduceMotion = useReducedMotion();
@@ -30,134 +29,63 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({ company, index }) => {
     // Use provided alt text or fallback to company name
     const altText = company.altText || `${company.name} logo`;
 
-    // Animation variants for the logo container
-    const containerVariants = {
-        initial: {
-            scale: 1,
-            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
-        },
-        hover: shouldReduceMotion ? {} : {
-            scale: 1.03,
-            boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-            transition: {
-                duration: 0.2,
-                ease: "easeOut"
-            }
-        },
-        tap: shouldReduceMotion ? {} : {
-            scale: 0.95,
-            transition: {
-                duration: 0.15,
-                ease: "easeInOut"
-            }
-        }
-    };
-
-    // Animation variants for the logo image
-    const imageVariants = {
-        initial: {
-            opacity: 1,
-            filter: "grayscale(0%)"
-        },
-        hover: shouldReduceMotion ? {} : {
-            opacity: 0.9,
-            filter: "grayscale(20%)",
-            transition: {
-                duration: 0.3,
-                ease: "easeInOut"
-            }
-        }
-    };
-
     return (
         <motion.div
-            className="company-logo-container group relative bg-white rounded-lg border border-gray-200 p-3 sm:p-4 md:p-6 cursor-pointer overflow-hidden touch-manipulation"
+            className="w-full h-full flex items-center justify-center cursor-pointer"
+            whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
+            transition={{ duration: 0.2 }}
             role="img"
             aria-label={`Company logo for ${company.name}`}
-            variants={containerVariants}
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            tabIndex={0}
         >
             {!imageError ? (
-                <div className="relative w-full h-12 sm:h-14 md:h-16 flex items-center justify-center">
-                    <motion.img
+                <>
+                    <img
                         src={company.logoUrl}
                         alt={altText}
-                        className={`company-logo-image max-w-full max-h-full object-contain ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        variants={imageVariants}
-                        initial="initial"
-                        whileHover="hover"
+                        className={`transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                            objectPosition: 'center',
+                            filter: 'grayscale(30%) brightness(0.8)',
+                            transition: 'all 0.3s ease',
+                            maxWidth: '100%',
+                            maxHeight: '100%'
+                        }}
                         onError={handleImageError}
                         onLoad={handleImageLoad}
+                        onMouseEnter={(e) => {
+                            if (!shouldReduceMotion) {
+                                e.currentTarget.style.filter = 'grayscale(0%) brightness(1)';
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!shouldReduceMotion) {
+                                e.currentTarget.style.filter = 'grayscale(30%) brightness(0.8)';
+                            }
+                        }}
                         loading="lazy"
                     />
-                    {/* Loading placeholder with animation */}
+                    {/* Loading indicator */}
                     {!imageLoaded && !imageError && (
-                        <motion.div
-                            className="absolute inset-0 flex items-center justify-center"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <div className="w-8 h-8 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-                        </motion.div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-3 h-3 border border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                        </div>
                     )}
-
-                    {/* Subtle background glow effect on hover */}
-                    <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg opacity-0"
-                        initial={{ opacity: 0 }}
-                        whileHover={shouldReduceMotion ? {} : {
-                            opacity: 0.3,
-                            transition: { duration: 0.3 }
-                        }}
-                    />
-                </div>
+                </>
             ) : (
-                /* Fallback display when image fails to load */
-                <motion.div
-                    className="w-full h-12 sm:h-14 md:h-16 flex items-center justify-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                >
-                    <div className="text-center">
-                        <motion.div
-                            className="company-logo-fallback-text text-gray-600 font-medium text-sm leading-tight"
-                            initial={{ y: 5, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.1, duration: 0.3 }}
-                        >
-                            {company.name}
-                        </motion.div>
-                        <motion.div
-                            className="text-xs text-gray-400 mt-1"
-                            initial={{ y: 5, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2, duration: 0.3 }}
-                        >
-                            Logo unavailable
-                        </motion.div>
-                    </div>
-                </motion.div>
+                /* Fallback for failed images */
+                <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-xs text-gray-400 font-medium text-center px-1">
+                        {company.name}
+                    </span>
+                </div>
             )}
 
-            {/* Screen reader only company name for additional context */}
-            <span className="sr-only">
-                {company.name}
-            </span>
-
-            {/* Subtle border animation on hover */}
-            <motion.div
-                className="absolute inset-0 rounded-lg border-2 border-transparent"
-                whileHover={shouldReduceMotion ? {} : {
-                    borderColor: "rgba(59, 130, 246, 0.2)",
-                    transition: { duration: 0.2 }
-                }}
-            />
+            {/* Screen reader text */}
+            <span className="sr-only">{company.name}</span>
         </motion.div>
     );
 };
