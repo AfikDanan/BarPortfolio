@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Menu, X, Shield, User } from 'lucide-react';
+import { Download, Menu, X, User } from 'lucide-react';
 
 
 interface NavigationProps {
@@ -39,10 +39,6 @@ export const Navigation: React.FC<NavigationProps> = ({
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <User className="w-6 h-6 text-white" />
-            </div>
-            <span className="ml-3 text-xl font-bold text-gray-900">Bar Tal</span>
 
             {currentSection !== 'landing' && (
               <div className="flex items-center justify-center px-4">
@@ -71,16 +67,6 @@ export const Navigation: React.FC<NavigationProps> = ({
               </button>
             ))}
 
-            {/* Admin Toggle */}
-            <button
-              onClick={onAdminToggle}
-              className={`p-2 rounded-lg transition-colors duration-200 ${isAdmin
-                ? 'bg-blue-100 text-blue-600'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-            >
-              <Shield className="w-5 h-5" />
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,15 +95,6 @@ export const Navigation: React.FC<NavigationProps> = ({
                 {section.label}
               </button>
             ))}
-            <button
-              onClick={onAdminToggle}
-              className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-200 ${isAdmin
-                ? 'text-blue-600 bg-blue-50'
-                : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                }`}
-            >
-              Admin Panel
-            </button>
           </div>
         )}
       </div>
