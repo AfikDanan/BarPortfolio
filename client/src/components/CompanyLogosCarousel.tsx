@@ -86,17 +86,16 @@ export const CompanyLogosCarousel: React.FC = () => {
     if (loading) {
         return (
             <div className="w-full overflow-hidden">
-                <div className="flex space-x-8 py-6">
-                    {Array.from({ length: 8 }).map((_, index) => (
+                <div className="flex space-x-8 py-8">
+                    {Array.from({ length: 6 }).map((_, index) => (
                         <div
                             key={index}
-                            className="flex-shrink-0 w-32 h-20 flex items-center justify-center"
-                        >
-                            <div className="w-3 h-3 border border-blue-300 border-t-transparent rounded-full animate-spin opacity-50"></div>
+                            className="flex-shrink-0 w-32 h-20 flex items-center justify-center">
+                            <div className="w-4 h-4 border border-blue-300 border-t-transparent rounded-full animate-spin opacity-50"></div>
                         </div>
                     ))}
                 </div>
-            </div>
+            </div >
         );
     }
 
@@ -120,7 +119,7 @@ export const CompanyLogosCarousel: React.FC = () => {
             {/* Scrollable Container */}
             <div
                 ref={scrollContainerRef}
-                className="flex space-x-8 scrollbar-hide carousel-container py-6 px-4"
+                className="flex space-x-16 scrollbar-hide carousel-container py-8 px-10"
                 style={{
                     scrollBehavior: 'auto'
                 }}
@@ -128,7 +127,7 @@ export const CompanyLogosCarousel: React.FC = () => {
                 {duplicatedCompanies.map((company, index) => (
                     <motion.div
                         key={`${company.id}-${index}`}
-                        className="flex-shrink-0 w-32 h-20"
+                        className="flex-shrink-0 w-32 h-30"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: (index % companies.length) * 0.05, duration: 0.3 }}
@@ -139,8 +138,6 @@ export const CompanyLogosCarousel: React.FC = () => {
             </div>
 
             {/* Gradient overlays for smooth edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-white via-white to-transparent pointer-events-none z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white via-white to-transparent pointer-events-none z-10" />
         </div>
     );
 };

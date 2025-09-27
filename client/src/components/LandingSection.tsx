@@ -1,6 +1,6 @@
 import React from 'react';
 import { Download, ArrowRight } from 'lucide-react';
-import { CompanyLogosCarousel } from './CompanyLogosCarousel';
+
 
 
 
@@ -32,10 +32,10 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
           </div>
 
           {/* Main Value Proposition */}
-          <div className="max-w-3xl mx-auto">
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-              Turning complexity into clarity –
-              <span className="font-semibold text-gray-900"> UX/UI for mission-critical systems</span>
+          <div className="max-w-3xl mx-auto ">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed pb-8">
+
+              <span className="font-semibold text-gray-900"> Crafting exceptional user experiences for complex systems</span>
             </p>
           </div>
 
@@ -74,13 +74,6 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
               <div className="text-xs sm:text-sm text-gray-600">Cups of Coffee</div>
             </div>
           </div>
-
-          {/* Company Logos Carousel */}
-
-          <div className="relative w-full max-w-4xl mx-auto">
-            <CompanyLogosCarousel />
-          </div>
-
         </div>
 
         {/* Scroll Indicator */}
