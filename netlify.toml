@@ -1,11 +1,13 @@
 [build]
-  base = "."
-  publish = "client/build"
-  command = "chmod +x scripts/netlify-build.sh && ./scripts/netlify-build.sh"
+  base = "client"
+  publish = "build"
+  command = "npm install --legacy-peer-deps && npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NODE_VERSION = "18.20.8"
+  NPM_FLAGS = "--legacy-peer-deps --silent"
+  CI = "true"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [[redirects]]
   from = "/api/*"
