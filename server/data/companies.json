@@ -40,5 +40,12 @@
         "logoUrl": "/static/logos/nesspresso.png",
         "altText": "Nesspresso",
         "website": "https://Nesspresso.com"
+    },
+    {
+        "id": "the5ers",
+        "name": "The-5-ers",
+        "logoUrl": "/static/logos/the5.png",
+        "altText": "the5ers",
+        "website": "https://the5ers.com"
     }
 ]
