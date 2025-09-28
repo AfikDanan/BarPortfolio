@@ -1,4 +1,4 @@
-# Multi-stage build for production optimization
+# Multi-stage build for production
 FROM node:18-alpine AS builder
 
 # Set working directory
@@ -9,36 +9,38 @@ COPY package*.json ./
 COPY client/package*.json ./client/
 
 # Install dependencies
-RUN npm ci --only=production --silent
-RUN cd client && npm ci --silent
+RUN npm ci --only=production
+RUN cd client && npm ci --only=production
 
 # Copy source code
 COPY . .
 
-# Build the React app
+# Build the client
 RUN npm run build
 
 # Production stage
 FROM node:18-alpine AS production
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
-# Copy package files for production dependencies only
+# Copy package files
 COPY package*.json ./
-RUN npm ci --only=production --silent && npm cache clean --force
 
-# Copy built application
+# Install only production dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy built client and server files
 COPY --from=builder /app/client/build ./client/build
 COPY --from=builder /app/server ./server
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nodejs -u 1001
+RUN adduser -S portfolio -u 1001
 
 # Change ownership
-RUN chown -R nodejs:nodejs /app
-USER nodejs
+RUN chown -R portfolio:nodejs /app
+USER portfolio
 
 # Expose port
 EXPOSE 5001
