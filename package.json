@@ -10,7 +10,7 @@
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "server": "nodemon server/index.js",
         "client": "cd client && npm start",
-        "build": "node scripts/check-node.js && cd client && npm run build",
+        "build": "cd client && npm ci --legacy-peer-deps --silent && npm run build",
         "start": "node server/index.js",
         "install-all": "npm install && cd client && npm install",
         "deploy:build": "npm run build",
@@ -18,7 +18,7 @@
         "deploy:compose": "docker-compose up -d",
         "deploy:heroku": "git push heroku main",
         "deploy:vercel": "vercel --prod",
-        "deploy:netlify": "netlify deploy --prod --dir=client/build",
+        "deploy:netlify": "npm run build && netlify deploy --prod --dir=client/build",
         "clean": "rm -rf node_modules client/node_modules client/build",
         "postinstall": "cd client && npm install",
         "test": "cd client && npm test",
@@ -34,10 +34,11 @@
     },
     "devDependencies": {
         "nodemon": "^3.0.2",
-        "concurrently": "^8.2.2"
+        "concurrently": "^8.2.2",
+        "semver": "^7.5.4"
     },
     "engines": {
-        "node": ">=18.0.0",
+        "node": "18.x",
         "npm": ">=8.0.0"
     }
 }
