@@ -72,17 +72,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
   const expandedProjectData = projects.find(p => p.id === expandedProject);
 
   return (
-    <section id="projects" className="py-14 px-6 bg-white  bg-opacity-20">
+    <section id="projects" className="py-8 md:py-14 px-4 md:px-6 bg-white bg-opacity-20">
       <div className="max-w-6xl mx-auto">
         <div className="relative w-full max-w-6xl mx-auto">
           <CompanyLogosCarousel />
         </div>
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Projects</h2>
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8">Projects</h2>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
+          {/* Category Filter - Hidden on mobile */}
+          <div className="hidden md:flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
             {categories.map((category) => (
               <button
                 key={category.key}
@@ -110,12 +110,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
           <>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-2">
               <div className="text-gray-900">
-                <span className="text-lg font-semibold">
+                <span className="text-base md:text-lg font-semibold">
                   {activeCategory === 'All Projects' ? 'All Projects' : categories.find(c => c.key === activeCategory)?.label}
                 </span>
-                <span className="text-gray-600 ml-2">
+                <span className="text-gray-600 ml-2 text-sm md:text-base">
                   ({filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''})
                 </span>
               </div>
@@ -123,14 +123,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               {activeCategory !== 'All Projects' && (
                 <button
                   onClick={() => handleCategoryChange('All Projects')}
-                  className="text-blue-400 hover:text-blue-300 text-sm transition-colors duration-200"
+                  className="text-blue-400 hover:text-blue-300 text-xs md:text-sm transition-colors duration-200 px-2 py-1 rounded"
                 >
                   Clear Filter
                 </button>
               )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {filteredProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
@@ -151,7 +151,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </p>
             <button
               onClick={() => handleCategoryChange('All Projects')}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-medium transition-colors duration-200 text-sm md:text-base"
             >
               View All Projects
             </button>

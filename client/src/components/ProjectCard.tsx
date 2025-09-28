@@ -12,10 +12,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
     return (
         <div
             onClick={onClick}
-            className="group bg-white backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:border-blue-500/50 transition-all duration-300 cursor-pointer hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full"
+            className="group bg-white backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-gray-200 hover:border-blue-500/50 transition-all duration-300 cursor-pointer hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full"
         >
             {/* Project Image */}
-            <div className="relative mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 aspect-video">
+            <div className="relative mb-4 md:mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 aspect-video">
                 <img
                     src={project.imageUrl}
                     alt={project.title}
@@ -34,7 +34,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
             <div className="flex flex-col flex-grow">
                 {/* Title and Description - Takes available space */}
                 <div className="flex-grow mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {project.title}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-3">
@@ -57,14 +57,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
                     </div>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
                         {project.tools.slice(0, 3).map((tech, index) => (
-                            <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md">
+                            <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md whitespace-nowrap">
                                 {tech}
                             </span>
                         ))}
                         {project.tools.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md">
+                            <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md whitespace-nowrap">
                                 +{project.tools.length - 3} more
                             </span>
                         )}
