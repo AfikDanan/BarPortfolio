@@ -55,7 +55,7 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
                              hover:border-blue-500 hover:text-blue-600 transition-all duration-300
                              flex items-center space-x-2">
               <Download className="w-4 h-4" />
-              <a href='./static/BarTal.pdf' download>Download Resume</a>
+              <a href='./static/Bar Tal CV.pdf' download>Download Resume</a>
             </button>
           </div>
 
