@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { ParticleBackground } from './components/ParticlesBackground';
 import { LandingSection } from './components/LandingSection';
@@ -17,16 +17,27 @@ function App() {
 
     // Fetch projects from API on component mount
     useEffect(() => {
+        let isMounted = true;
+
         const fetchProjects = async () => {
             try {
                 const response = await axios.get('/api/projects');
-                setProjects(response.data);
+                if (isMounted) {
+                    setProjects(response.data);
+                }
             } catch (error) {
                 console.error('Error fetching projects:', error);
             }
         };
 
-        fetchProjects();
+        // Only fetch if we don't have projects already
+        if (projects.length === 0) {
+            fetchProjects();
+        }
+
+        return () => {
+            isMounted = false;
+        };
     }, []); // Empty dependency array - only run on mount
 
     const handleAdminToggle = () => {

@@ -14,6 +14,7 @@ export interface Project {
     category: 'mobile' | 'web' | 'complex-systems';
     year: string;
     featured: boolean;
+    headerColor: string;
 }
 
 export interface ContactForm {

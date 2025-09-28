@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Menu, X, User } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 
 
 interface NavigationProps {

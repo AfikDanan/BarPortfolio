@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ExternalLink, Github, User, Calendar, Target, Settings, Lightbulb } from 'lucide-react';
+import { ArrowLeft, User, Calendar, Target, Settings, Lightbulb } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectDetailViewProps {
@@ -15,19 +15,29 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
     onImageClick,
     projects
 }) => {
-    const getCategoryBgColor = (category: string) => {
-        switch (category) {
-            case 'mobile': return 'bg-purple-600';
-            case 'web': return 'bg-emerald-600';
-            case 'complex-systems': return 'bg-blue-600';
-            default: return 'bg-gray-600';
-        }
+    // Predefined color mapping - object ensures Tailwind includes all classes at build time
+    const PROJECT_COLORS = {
+        'emerald': 'bg-emerald-600',
+        'orange': 'bg-orange-600',
+        'green': 'bg-green-600',
+        'purple': 'bg-purple-600',
+        'red': 'bg-red-600',
+        'indigo': 'bg-indigo-600',
+        'pink': 'bg-pink-600',
+        'yellow': 'bg-yellow-600',
+        'blue': 'bg-blue-600'
+    } as const;
+
+    const getHeaderColor = (colorKey?: string) => {
+        return PROJECT_COLORS[colorKey as keyof typeof PROJECT_COLORS] || PROJECT_COLORS.blue;
     };
+
+    const headerColor = getHeaderColor(project?.headerColor);
 
     return (
         <div className="w-full" data-project-detail>
             {/* Hero Section */}
-            <div className={`${getCategoryBgColor(project.category)} text-white py-8 mb-8 rounded-t-2xl relative overflow-hidden`}>
+            <div className={`${headerColor} text-white py-8 mb-8 rounded-t-2xl relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20"></div>
                 <div className="relative px-6">
                     <div className="flex items-center justify-between mb-8">

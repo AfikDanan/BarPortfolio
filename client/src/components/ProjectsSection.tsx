@@ -4,6 +4,7 @@ import { Project } from '../types';
 import { ProjectCard } from './ProjectCard';
 import { ProjectDetailView } from './ProjectDetailView';
 import { ImageModal } from './ImageModal';
+import { CompanyLogosCarousel } from './CompanyLogosCarousel';
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -73,6 +74,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
   return (
     <section id="projects" className="py-14 px-6 bg-white  bg-opacity-20">
       <div className="max-w-6xl mx-auto">
+        <div className="relative w-full max-w-6xl mx-auto">
+          <CompanyLogosCarousel />
+        </div>
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Projects</h2>
