@@ -119,7 +119,7 @@ export const CompanyLogosCarousel: React.FC = () => {
             {/* Scrollable Container */}
             <div
                 ref={scrollContainerRef}
-                className="flex space-x-16 scrollbar-hide carousel-container py-8 px-10"
+                className="flex space-x-16 scrollbar-hide carousel-container py-4 px-10"
                 style={{
                     scrollBehavior: 'auto'
                 }}

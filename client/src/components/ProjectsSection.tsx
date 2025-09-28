@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
 import { ExternalLink, Calendar, Tag } from 'lucide-react';
+import { CompanyLogosCarousel } from './CompanyLogosCarousel';
+
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -19,8 +21,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, onPr
     : featuredProjects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-14 px-6">
       <div className="max-w-6xl mx-auto">
+
+        <div className="relative w-full max-w-6xl mx-auto">
+          <CompanyLogosCarousel />
+        </div>
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Projects</h2>
