@@ -2,10 +2,6 @@
     "name": "bar-portfolio",
     "version": "0.1.0",
     "private": true,
-    "workspaces": [
-        ".",
-        "client"
-    ],
     "scripts": {
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "server": "nodemon server/index.js",
@@ -20,7 +16,6 @@
         "deploy:vercel": "vercel --prod",
         "deploy:netlify": "npm run build && netlify deploy --prod --dir=client/build",
         "clean": "rm -rf node_modules client/node_modules client/build",
-        "postinstall": "cd client && npm install",
         "test": "cd client && npm test",
         "lint": "cd client && npm run lint",
         "preview": "npm run build && npm start",
@@ -38,7 +33,7 @@
         "semver": "^7.5.4"
     },
     "engines": {
-        "node": "18.20.8",
-        "npm": ">=9.0.0"
+        "node": ">=18.0.0",
+        "npm": ">=8.0.0"
     }
 }
