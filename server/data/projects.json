@@ -1,71 +1,81 @@
 [
     {
         "id": "1",
-        "title": "CyberInt Security Dashboard",
-        "client": "CyberInt (CheckPoint Company)",
-        "description": "Comprehensive cybersecurity threat intelligence platform with real-time monitoring and analytics",
-        "overview": "Led the design and UI/UX overhaul of the complex system UI for the company's SaaS platform, integrating advanced UX solutions tailored to customer needs and feedback to deliver a modern and innovative design under tight deadlines.",
-        "role": "UX/UI Designer",
-        "process": "Collaborated closely with stakeholders and the company's designer to ensure the design aligned with customer expectations and business goals.",
+        "title": "Bulwarx Cybersecurity Platform",
+        "description": "Internal Portal for a Leading Global Cybersecurity Company. Designed and developed a comprehensive internal portal that serves as a central hub for employees and partners.",
+        "category": "web",
+        "year": "2024",
+        "client": "Bulwarx Security",
+        "role": "Lead UI/UX Designer",
+        "duration": "5 months",
+        "overview": "The client was established following in-depth research, planning, and UI specification based on cybersecurity best practices. I designed and developed a comprehensive internal portal that serves as a central hub for employees and partners, focusing on security workflows and real-time threat monitoring.",
+        "process": "My primary focus was on user-centered design and process engineering. I collaborated with security professionals to understand complex workflows and translate them into intuitive user interfaces. The process involved extensive user research, wireframing, prototyping, and iterative testing.",
+        "impact": "The result is a cohesive, user-friendly portal that significantly improved workflow efficiency by 40% and enhanced user satisfaction within the cybersecurity operations. The portal now serves as a central tool for enhancing engagement and internal communications.",
         "tools": [
             "Figma",
-            "Photoshop",
-            "Adobe Creative Suite"
+            "Prototyping",
+            "User Research",
+            "Design Systems"
         ],
-        "impact": "Reduced analyst response time by 40% and increased user satisfaction scores by 65%",
-        "imageUrl": "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "imageUrl": "static/images/projects/Bulwarx/Bulwarx_main.png",
         "detailImages": [
-            "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/590022/pexels-photo-590022.jpg?auto=compress&cs=tinysrgb&w=800"
+            "/api/placeholder/600/400",
+            "/api/placeholder/600/400",
+            "/api/placeholder/600/400"
         ],
-        "category": "complex-systems",
-        "year": "2024",
         "featured": true
     },
     {
         "id": "2",
-        "title": "Engineer Sandbox Platform",
-        "client": "Israel Electric Corporation",
-        "description": "Interactive testing environment for electrical engineers with advanced simulation capabilities",
-        "overview": "Led the design of a sandbox workspace for engineers, overcoming significant challenges to create an intuitive and efficient tool that streamlined their workflows.",
-        "role": "UX/UI Designer",
-        "process": "Stakeholder interviews, task analysis, iterative design, prototype validation",
-        "tools": [
-            "Figma",
-            "Illustrator",
-            "Principle"
-        ],
-        "impact": "Improved testing efficiency by 50% and reduced system implementation errors by 30%",
-        "imageUrl": "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "detailImages": [
-            "https://images.pexels.com/photos/256219/pexels-photo-256219.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=800"
-        ],
+        "title": "DeviceChef Restaurant Management",
+        "description": "Event-Driven Restaurant Management System with real-time monitoring capabilities and advanced analytics for kitchen operations.",
         "category": "complex-systems",
         "year": "2024",
+        "client": "DeviceChef Inc",
+        "role": "Product Designer & Developer",
+        "duration": "5 months",
+        "overview": "Restaurant owners needed a unified platform to manage orders, inventory, staff scheduling, and real-time kitchen operations. The existing systems were fragmented and lacked real-time capabilities, creating inefficiencies during peak hours.",
+        "process": "Created an event-driven architecture with real-time updates, intuitive dashboard design, and comprehensive analytics. The approach focused on minimizing cognitive load for kitchen staff during peak hours while providing comprehensive management tools for owners.",
+        "impact": "The platform resulted in 40% faster order processing, reduced food waste by 30%, and improved overall kitchen efficiency significantly. Multi-location support enabled franchise growth.",
+        "tools": [
+            "Figma",
+            "User Research",
+            "Prototyping",
+            "Dashboard Design"
+        ],
+        "imageUrl": "/api/placeholder/800/500",
+        "detailImages": [
+            "/api/placeholder/600/400",
+            "/api/placeholder/600/400"
+        ],
         "featured": true
     },
     {
         "id": "3",
-        "title": "Bulwarx Internal Portal",
-        "client": "Bulwarx Security",
-        "description": "Complete redesign of internal management portal with enhanced user experience and workflow optimization",
-        "overview": "Transformed a complex internal system into an intuitive platform that streamlined daily operations for security personnel by designing the inner portal with a focus on enhancing user experience and interface aesthetics to support secure and efficient workflows.",
-        "role": "UX/UI Designer",
-        "process": "Collaborated closely with stakeholders to understand requirements and ensure alignment with company goals.",
-        "tools": [
-            "Figma",
-            "Photoshop",
-            "Zeplin"
-        ],
-        "impact": "Led to contract renewal and 45% reduction in training time for new users",
-        "imageUrl": "https://images.pexels.com/photos/586062/pexels-photo-586062.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "detailImages": [
-            "https://images.pexels.com/photos/270348/pexels-photo-270348.jpg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/586062/pexels-photo-586062.jpeg?auto=compress&cs=tinysrgb&w=800"
-        ],
+        "title": "Ginegar E-commerce Platform",
+        "description": "E-commerce Platform for a Global Agricultural Products Company specializing in greenhouse solutions and agricultural products.",
         "category": "web",
-        "year": "2025",
-        "featured": false
+        "year": "2024",
+        "client": "Ginegar Plastic Products",
+        "role": "Full Stack Designer",
+        "duration": "5 months",
+        "overview": "A leading global agricultural company needed to transition from traditional B2B sales to a digital-first approach, requiring a platform that could handle complex agricultural product catalogs, international shipping, and multi-language support.",
+        "process": "Designed a clean, nature-inspired interface with intuitive product categorization, advanced filtering options, and seamless checkout experience. Implemented multi-currency support and localized content management across 15 countries.",
+        "impact": "The platform launched successfully across 15 countries, resulting in 60% increase in online sales and significantly expanded market reach. Customer satisfaction improved with streamlined ordering process.",
+        "tools": [
+            "Shopify Plus",
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "Stripe",
+            "Multi-language UI"
+        ],
+        "imageUrl": "",
+        "detailImages": [
+            "/api/placeholder/600/400",
+            "/api/placeholder/600/400",
+            "/api/placeholder/600/400"
+        ],
+        "featured": true
     }
 ]

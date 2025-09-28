@@ -7,6 +7,7 @@ export interface Project {
     role: string;
     process: string;
     tools: string[];
+    duration: string;
     impact: string;
     imageUrl: string;
     detailImages: string[];
