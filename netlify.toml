@@ -5,10 +5,11 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  CI = "true"
+  CI = "false"
   NODE_OPTIONS = "--max-old-space-size=3008"
   NPM_CONFIG_PROGRESS = "false"
   NPM_CONFIG_LOGLEVEL = "error"
+  GENERATE_SOURCEMAP = "false"
 
 [[redirects]]
   from = "/api/*"

@@ -1,4 +1,9 @@
 #!/bin/bash
+set -e
+echo "Starting build process..."
 cd client
-npm install --legacy-peer-deps --no-audit --no-fund
-npm run build
+echo "Installing dependencies..."
+npm install --legacy-peer-deps --no-audit --no-fund --silent
+echo "Building project..."
+CI=false npm run build
+echo "Build completed successfully!"

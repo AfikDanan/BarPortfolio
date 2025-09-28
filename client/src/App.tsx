@@ -38,7 +38,7 @@ function App() {
         return () => {
             isMounted = false;
         };
-    }, []); // Empty dependency array - only run on mount
+    }, [projects.length, setProjects]); // Include dependencies
 
     const handleAdminToggle = () => {
         if (isAdmin) {
