@@ -35,3 +35,12 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Deployment files (keep .env.production in repo for reference)
+docker-compose.override.yml
+
+# Coverage
+coverage/
+
+# Build artifacts
+*.tgz
