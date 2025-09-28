@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@tailwindcss/line-clamp": "^0.4.4",
         "axios": "^1.6.0",
         "framer-motion": "^10.16.0",
         "lucide-react": "^0.294.0",

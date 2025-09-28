@@ -5,7 +5,6 @@ import { LandingSection } from './components/LandingSection';
 import { AboutSection } from './components/AboutSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
-import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import { Project } from './types';
@@ -14,8 +13,6 @@ import axios from 'axios';
 function App() {
     const [projects, setProjects] = useLocalStorage<Project[]>('portfolio-projects', []);
     const [isAdmin, setIsAdmin] = useLocalStorage<boolean>('portfolio-admin', false);
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [showProjectModal, setShowProjectModal] = useState(false);
     const { currentSection } = useScrollAnimation();
 
     // Fetch projects from API on component mount
@@ -41,16 +38,6 @@ function App() {
         }
     };
 
-    const handleProjectClick = (project: Project) => {
-        setSelectedProject(project);
-        setShowProjectModal(true);
-    };
-
-    const handleCloseProjectModal = () => {
-        setShowProjectModal(false);
-        setSelectedProject(null);
-    };
-
     const handleSectionClick = () => {
         // This is handled by the navigation component
     };
@@ -74,19 +61,9 @@ function App() {
             <main className="relative z-10">
                 <LandingSection onSectionClick={handleSectionClick} />
                 <AboutSection />
-                <ProjectsSection
-                    projects={projects}
-                    onProjectClick={handleProjectClick}
-                />
+                <ProjectsSection projects={projects} />
                 <ContactSection />
             </main>
-
-            {/* Project Detail Modal */}
-            <ProjectDetailModal
-                project={selectedProject}
-                isOpen={showProjectModal}
-                onClose={handleCloseProjectModal}
-            />
         </div>
     );
 }
