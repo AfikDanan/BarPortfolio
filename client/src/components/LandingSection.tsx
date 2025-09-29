@@ -59,22 +59,6 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
               <a href='./static/Bar Tal CV.pdf' download>Download Resume</a>
             </button>
           </div>
-
-          {/* Statistics
-          <div className="grid grid-cols-3 gap-6 max-w-sm mx-auto pt-2">
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-blue-600">3+</div>
-              <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-purple-600">15+</div>
-              <div className="text-xs sm:text-sm text-gray-600">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-emerald-600">∞</div>
-              <div className="text-xs sm:text-sm text-gray-600">Cups of Coffee</div>
-            </div>
-          </div> */}
         </div>
 
         {/* Scroll Indicator */}
