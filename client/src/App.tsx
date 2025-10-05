@@ -30,21 +30,19 @@ function App() {
             }
         };
 
-        // Only fetch if we don't have projects already
-        if (projects.length === 0) {
-            fetchProjects();
-        }
+        // Clear any cached projects and fetch fresh data
+        localStorage.removeItem('portfolio-projects');
+        fetchProjects();
 
         return () => {
             isMounted = false;
         };
-    }, [projects.length, setProjects]); // Include dependencies
+    }, []); // Empty dependency array - only run once on mount
 
     const handleAdminToggle = () => {
         if (isAdmin) {
             setIsAdmin(false);
         } else {
-            // For now, just toggle admin mode - proper authentication will be handled in admin routes
             setIsAdmin(true);
         }
     };
@@ -54,7 +52,7 @@ function App() {
     };
 
     return (
-        <div className="relative">
+        <div className="relative w-full max-w-full overflow-x-hidden">
             {/* Background Effects */}
             <div className="fixed inset-0 z-0">
                 <ParticleBackground />
@@ -69,7 +67,7 @@ function App() {
             />
 
             {/* Main Content */}
-            <main className="relative z-10">
+            <main className="relative z-10 w-full max-w-full overflow-x-hidden">
                 <LandingSection onSectionClick={handleSectionClick} />
                 <AboutSection />
                 <ProjectsSection projects={projects} />

@@ -39,32 +39,38 @@ export const LandingSection: React.FC<LandingSectionProps> = ({ onSectionClick }
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-md sm:max-w-none mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto px-4">
             <button
               onClick={scrollToProjects}
               className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white 
                          px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-sm sm:text-base
                          transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl
-                         flex items-center justify-center space-x-2 w-full sm:w-auto min-w-[200px]"
+                         flex items-center justify-center space-x-2 w-full sm:w-auto touch-manipulation"
             >
-              <span>View Projects</span>
+              <span className="whitespace-nowrap">View Projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <button className="bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold 
-                             text-sm sm:text-base border-2 border-gray-300
-                             hover:border-blue-500 hover:text-blue-600 transition-all duration-300
-                             flex items-center justify-center space-x-2 w-full sm:w-auto min-w-[200px]">
+            <a
+              href='./static/Bar Tal CV.pdf'
+              download
+              className="bg-white text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold 
+                         text-sm sm:text-base border-2 border-gray-300
+                         hover:border-blue-500 hover:text-blue-600 transition-all duration-300
+                         flex items-center justify-center space-x-2 w-full sm:w-auto touch-manipulation"
+            >
               <Download className="w-4 h-4" />
-              <a href='./static/Bar Tal CV.pdf' download>Download Resume</a>
-            </button>
+              <span className="whitespace-nowrap">Download Resume</span>
+            </a>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="relative left-1/2 transform -translate-x-1/2 animate-bounce mt-6 sm:mt-8">
-          <div className="w-5 h-8 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gray-400 rounded-full mt-1 animate-pulse"></div>
+        {/* Scroll Indicator - Centered */}
+        <div className="flex justify-center mt-8 sm:mt-12">
+          <div className="animate-bounce">
+            <div className="w-5 h-8 border-2 border-gray-400 rounded-full flex justify-center">
+              <div className="w-1 h-2 bg-gray-400 rounded-full mt-1 animate-pulse"></div>
+            </div>
           </div>
         </div>
       </div>

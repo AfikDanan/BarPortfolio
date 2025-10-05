@@ -61,14 +61,14 @@ export const AboutSection: React.FC = () => {
 
           {/* Design Philosophy */}
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center sm:text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">My Design Philosophy</h3>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">My Design Philosophy</h3>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed text-left sm:text-center">
               Great design is like a good joke - if you have to explain it, it's probably not that good.
               I believe in creating interfaces so intuitive that users forget they're using technology.
               Every pixel, every interaction, every color choice serves a purpose.
@@ -93,10 +93,10 @@ export const AboutSection: React.FC = () => {
                 <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {fact.icon}
                 </div>
-                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 text-left sm:text-left">
                   {fact.title}
                 </h4>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-left sm:text-left">
                   {fact.description}
                 </p>
               </motion.div>
