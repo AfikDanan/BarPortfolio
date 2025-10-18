@@ -3,7 +3,9 @@
         "id": "1",
         "title": "Bulwarx Internal Portal UI Design",
         "description": "Designed an internal portal for Bulwarx to enhance employee communication and engagement through an intuitive, accessible, and visually cohesive interface.",
-        "category": "web",
+        "category": [
+            "web"
+        ],
         "year": "2024",
         "client": "Bulwarx Security",
         "role": "Lead UI/UX Designer",
@@ -24,32 +26,63 @@
     },
     {
         "id": "2",
-        "title": "DroneChef Restaurant Management",
-        "description": "Event-driven restaurant management system with real-time monitoring capabilities and advanced analytics for kitchen operations.",
-        "category": "complex-systems",
+        "title": "Cyberint Risk Monitoring Platform",
+        "description": "Proactive external risk monitoring and mitigation platform with real-time threat detection, risk assessment, and security incident management.",
+        "category": [
+            "complex-systems"
+        ],
         "year": "2024",
-        "client": "DroneChef Inc",
-        "role": "Product Designer & Developer",
-        "duration": "5 months",
-        "headerColor": "orange",
-        "overview": "Created a unified platform to manage orders, inventory, staff scheduling, and real-time kitchen operations, addressing fragmented systems and inefficiencies during peak hours.",
-        "process": "Developed an event-driven architecture with real-time updates, intuitive dashboard design, and comprehensive analytics. Focused on minimizing cognitive load for kitchen staff while providing comprehensive management tools.",
-        "impact": "Achieved 40% faster order processing, reduced food waste by 30%, and improved overall kitchen efficiency. Multi-location support enabled franchise growth.",
+        "client": "Cyberint",
+        "role": "Lead UI/UX Designer",
+        "duration": "7 months",
+        "headerColor": "purple",
+        "overview": "Developed a platform combining real-time threat intelligence and deep web monitoring to proactively identify and mitigate external risks. Created an intuitive system handling complex security workflows while remaining accessible to various user types.",
+        "process": "Conducted extensive user research with security analysts, collaborated with development teams for technical feasibility, and created a comprehensive design system from scratch. Process involved wireframing, prototyping, and iterative testing with customer feedback.",
+        "impact": "Transformed how clients monitor and respond to external threats. Reduced incident response times, improved collaboration between security teams, and enhanced overall security posture. The design system continues to guide product development.",
         "tools": [
             "Figma",
-            "User Research",
+            "Design Systems",
             "Prototyping",
-            "Dashboard Design"
+            "User Research",
+            "Data Visualization"
         ],
-        "imageUrl": "/static/images/projects/DroneChef/Drone_preview.png",
+        "imageUrl": "/static/images/projects/cyberint/cyberint_preview.png",
         "detailImages": [],
         "featured": true
     },
     {
         "id": "3",
+        "title": "IEC Internal Product Transfer Platform",
+        "description": "Designed an internal platform for the Israel Electric Corporation to streamline product transfers, delivering an intuitive, responsive, and consistent UI across devices.",
+        "category": [
+            "web"
+        ],
+        "year": "2024",
+        "client": "IEC - Israel Electric Corporation",
+        "role": "Lead UI/UX Designer & Developer",
+        "duration": "6 months",
+        "headerColor": "blue",
+        "overview": "Developed an intra-organizational platform to optimize operational management across the national electrical grid, serving various user types from field technicians to grid operators and project managers.",
+        "process": "Conducted extensive user research and fulfilled the company's established design system to ensure consistency. Focused on creating an intuitive interface that would elevate routine organizational tasks into something more pleasant and efficient.",
+        "impact": "Successfully streamlined internal operations across multiple power stations nationwide, improving equipment tracking efficiency and reducing training time for new users. Now serves as the central hub for managing electrical infrastructure assets.",
+        "tools": [
+            "Figma",
+            "User Research",
+            "Prototyping",
+            "Design Systems"
+        ],
+        "imageUrl": "/static/images/projects/IEC/IEC_preview.png",
+        "detailImages": [],
+        "featured": true
+    },
+    {
+        "id": "4",
         "title": "Ginegar E-commerce Platform",
         "description": "E-commerce platform for a global agricultural products company specializing in greenhouse solutions and agricultural products.",
-        "category": "web",
+        "category": [
+            "web",
+            "mobile"
+        ],
         "year": "2024",
         "client": "Ginegar Plastic Products",
         "role": "Full Stack Designer",
@@ -70,49 +103,27 @@
         "featured": true
     },
     {
-        "id": "4",
-        "title": "IEC Internal Product Transfer Platform",
-        "description": "Designed an internal platform for the Israel Electric Corporation to streamline product transfers, delivering an intuitive, responsive, and consistent UI across devices.",
-        "category": "web",
-        "year": "2024",
-        "client": "IEC - Israel Electric Corporation",
-        "role": "Lead UI/UX Designer & Developer",
-        "duration": "6 months",
-        "headerColor": "blue",
-        "overview": "Developed an intra-organizational platform to optimize operational management across the national electrical grid, serving various user types from field technicians to grid operators and project managers.",
-        "process": "Conducted extensive user research and fulfilled the company's established design system to ensure consistency. Focused on creating an intuitive interface that would elevate routine organizational tasks into something more pleasant and efficient.",
-        "impact": "Successfully streamlined internal operations across multiple power stations nationwide, improving equipment tracking efficiency and reducing training time for new users. Now serves as the central hub for managing electrical infrastructure assets.",
-        "tools": [
-            "Figma",
-            "User Research",
-            "Prototyping",
-            "Design Systems"
-        ],
-        "imageUrl": "/static/images/projects/IEC/IEC_preview.png",
-        "detailImages": [],
-        "featured": true
-    },
-    {
         "id": "5",
-        "title": "Cyberint Risk Monitoring Platform",
-        "description": "Proactive external risk monitoring and mitigation platform with real-time threat detection, risk assessment, and security incident management.",
-        "category": "complex-systems",
+        "title": "DroneChef Restaurant Management",
+        "description": "Event-driven restaurant management system with real-time monitoring capabilities and advanced analytics for kitchen operations.",
+        "category": [
+            "complex-systems"
+        ],
         "year": "2024",
-        "client": "Cyberint",
-        "role": "Lead UI/UX Designer",
-        "duration": "7 months",
-        "headerColor": "purple",
-        "overview": "Developed a platform combining real-time threat intelligence and deep web monitoring to proactively identify and mitigate external risks. Created an intuitive system handling complex security workflows while remaining accessible to various user types.",
-        "process": "Conducted extensive user research with security analysts, collaborated with development teams for technical feasibility, and created a comprehensive design system from scratch. Process involved wireframing, prototyping, and iterative testing with customer feedback.",
-        "impact": "Transformed how clients monitor and respond to external threats. Reduced incident response times, improved collaboration between security teams, and enhanced overall security posture. The design system continues to guide product development.",
+        "client": "DroneChef Inc",
+        "role": "Product Designer & Developer",
+        "duration": "5 months",
+        "headerColor": "orange",
+        "overview": "Created a unified platform to manage orders, inventory, staff scheduling, and real-time kitchen operations, addressing fragmented systems and inefficiencies during peak hours.",
+        "process": "Developed an event-driven architecture with real-time updates, intuitive dashboard design, and comprehensive analytics. Focused on minimizing cognitive load for kitchen staff while providing comprehensive management tools.",
+        "impact": "Achieved 40% faster order processing, reduced food waste by 30%, and improved overall kitchen efficiency. Multi-location support enabled franchise growth.",
         "tools": [
             "Figma",
-            "Design Systems",
-            "Prototyping",
             "User Research",
-            "Data Visualization"
+            "Prototyping",
+            "Dashboard Design"
         ],
-        "imageUrl": "/static/images/projects/cyberint/cyberint_preview.png",
+        "imageUrl": "/static/images/projects/DroneChef/Drone_preview.png",
         "detailImages": [],
         "featured": true
     }

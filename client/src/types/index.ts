@@ -11,7 +11,7 @@ export interface Project {
     impact: string;
     imageUrl: string;
     detailImages: string[];
-    category: 'mobile' | 'web' | 'complex-systems';
+    category: ('mobile' | 'web' | 'complex-systems')[];
     year: string;
     featured: boolean;
     headerColor: string;
