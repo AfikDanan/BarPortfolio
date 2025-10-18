@@ -44,12 +44,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, onIm
       label,
       count: key === 'All Projects'
         ? featured.length
-        : featured.filter(p => p.category === key).length
+        : featured.filter(p => p.category.includes(key as 'mobile' | 'web' | 'complex-systems')).length
     }));
 
     const filtered = activeCategory === 'All Projects'
       ? featured
-      : featured.filter(project => project.category === activeCategory);
+      : featured.filter(project => project.category.includes(activeCategory as 'mobile' | 'web' | 'complex-systems'));
 
     return { categories: cats, filteredProjects: filtered };
   }, [projects, activeCategory]);
