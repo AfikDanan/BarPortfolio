@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Tag } from 'lucide-react';
+import { Tag } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectCardProps {
@@ -8,7 +8,7 @@ interface ProjectCardProps {
     onProjectClick: (project: Project) => void;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick, onProjectClick }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick }) => {
     const handleCardClick = () => {
         onProjectClick(project);
     };
@@ -37,10 +37,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick,
                 )}
 
                 {/* Category Badge */}
-                <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
-                    <span className="px-2 sm:px-3 py-1 bg-blue-500/80 backdrop-blur-sm text-white text-xs font-medium rounded-full capitalize">
-                        {project.category.replace('-', ' ')}
-                    </span>
+                <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex flex-wrap gap-1">
+                    {project.category.map((cat, index) => (
+                        <span key={index} className="px-2 sm:px-3 py-1 bg-blue-500/80 backdrop-blur-sm text-white text-xs font-medium rounded-full capitalize">
+                            {cat.replace('-', ' ')}
+                        </span>
+                    ))}
                 </div>
             </div>
 
@@ -58,14 +60,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick,
                 {/* Fixed bottom content */}
                 <div className="space-y-2 sm:space-y-3 mt-auto">
                     {/* Project Meta */}
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                        <div className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3 flex-shrink-0" />
-                            <span className="truncate">{project.year}</span>
-                        </div>
+                    <div className="flex items-center text-xs text-gray-500">
                         <div className="flex items-center gap-1 min-w-0">
                             <Tag className="w-3 h-3 flex-shrink-0" />
-                            <span className="truncate text-right">{project.client}</span>
+                            <span className="truncate">{project.client}</span>
                         </div>
                     </div>
 
