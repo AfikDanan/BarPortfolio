@@ -55,7 +55,8 @@
         "title": "IEC Internal Product Transfer Platform",
         "description": "Designed an internal platform for the Israel Electric Corporation to streamline product transfers, delivering an intuitive, responsive, and consistent UI across devices.",
         "category": [
-            "web"
+            "web",
+            "mobile"
         ],
         "year": "2024",
         "client": "IEC - Israel Electric Corporation",
