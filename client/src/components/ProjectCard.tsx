@@ -38,7 +38,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClic
 
                 {/* Category Badge */}
                 <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex flex-wrap gap-1">
-                    {project.category.map((cat, index) => (
+                    {(Array.isArray(project.category) ? project.category : [project.category]).map((cat, index) => (
                         <span key={index} className="px-2 sm:px-3 py-1 bg-blue-500/80 backdrop-blur-sm text-white text-xs font-medium rounded-full capitalize">
                             {cat.replace('-', ' ')}
                         </span>
