@@ -134,3 +134,83 @@ code {
         padding-right: env(safe-area-inset-right);
     }
 }
+
+/* 
+Project Detail View Styles */
+[data-project-detail] {
+    /* Custom scrollbar for project detail */
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+}
+
+[data-project-detail]::-webkit-scrollbar {
+    width: 6px;
+}
+
+[data-project-detail]::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+}
+
+[data-project-detail]::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+}
+
+[data-project-detail]::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Ensure images in project detail fill container properly */
+[data-project-detail] img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile-specific project detail optimizations */
+@media (max-width: 640px) {
+
+    /* Improve mobile scrolling performance */
+    .project-detail-view {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    /* Optimize image loading on mobile */
+    .project-detail-view img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+    /* Ensure proper touch targets */
+    .project-detail-view button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Prevent horizontal scrolling on mobile */
+    .project-detail-view {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    /* Mobile header optimizations */
+    .project-detail-header {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* Image modal styles */
+.image-modal {
+    backdrop-filter: blur(2px);
+}
+
+.image-modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100vw;
+    max-height: 100vh;
+}
