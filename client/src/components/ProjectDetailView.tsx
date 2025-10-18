@@ -46,7 +46,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                                 {project.title}
                             </h1>
                             <p className="text-xs sm:text-sm text-gray-500 truncate">
-                                {project.client} • {project.year}
+                                {project.client}
                             </p>
                         </div>
                     </div>
