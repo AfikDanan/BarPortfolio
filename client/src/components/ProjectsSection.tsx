@@ -6,6 +6,8 @@ import { CompanyLogosCarousel } from './CompanyLogosCarousel';
 
 interface ProjectsSectionProps {
   projects: Project[];
+  onImageClick: (imageUrl: string) => void;
+  onProjectClick: (project: Project) => void;
 }
 
 const CATEGORY_LABELS = {
@@ -15,7 +17,7 @@ const CATEGORY_LABELS = {
   'complex-systems': 'Complex Systems'
 } as const;
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, onImageClick, onProjectClick }) => {
   const [activeCategory, setActiveCategory] = useState('All Projects');
 
   // Reset to "All Projects" on mobile
@@ -114,7 +116,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
               {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard key={project.id} project={project} onImageClick={onImageClick} onProjectClick={onProjectClick} />
               ))}
             </div>
           </>

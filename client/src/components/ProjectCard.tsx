@@ -4,53 +4,13 @@ import { Project } from '../types';
 
 interface ProjectCardProps {
     project: Project;
+    onImageClick: (imageUrl: string) => void;
+    onProjectClick: (project: Project) => void;
 }
 
-// Constants moved outside component to avoid recreation on each render
-const PROJECT_FOLDER_MAP: Record<string, string> = {
-    '1': 'Bulwarx',
-    '2': 'DroneChef',
-    '3': 'ginegar',
-    '4': 'IEC',
-    '5': 'cyberint'
-};
-
-const IMAGE_VIEWER_HTML = (title: string, imagePath: string) => `<!DOCTYPE html>
-<html>
-<head>
-    <title>${title}</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        img {
-            max-width: 100vw;
-            max-height: 100vh;
-            object-fit: contain;
-        }
-    </style>
-</head>
-<body>
-    <img src="${imagePath}" alt="${title}" />
-</body>
-</html>`;
-
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-    const handleClick = () => {
-        const folderName = PROJECT_FOLDER_MAP[project.id] || project.id;
-        const projectImagePath = `/static/images/projects/${folderName}/${folderName}.png`;
-
-        const newWindow = window.open('', '_blank');
-        if (newWindow) {
-            newWindow.document.write(IMAGE_VIEWER_HTML(project.title, projectImagePath));
-            newWindow.document.close();
-        }
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onImageClick, onProjectClick }) => {
+    const handleCardClick = () => {
+        onProjectClick(project);
     };
 
     const displayedTools = project.tools.slice(0, 3);
@@ -58,8 +18,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
     return (
         <div
-            onClick={handleClick}
-            className="group bg-white backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-200 hover:border-blue-500/50 transition-all duration-300 cursor-pointer active:scale-95 md:hover:scale-105 hover:shadow-xl md:hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full min-h-[420px] sm:min-h-[460px] md:min-h-[500px] touch-manipulation"
+            className="group bg-white backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-200 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col h-full min-h-[420px] sm:min-h-[460px] md:min-h-[500px] cursor-pointer"
+            onClick={handleCardClick}
         >
             {/* Project Image */}
             <div className="relative mb-4 sm:mb-5 md:mb-6 rounded-lg md:rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50 h-40 sm:h-48 md:h-56">
@@ -67,7 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     <img
                         src={project.imageUrl}
                         alt={project.title}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500 cursor-pointer"
                         loading="lazy"
                     />
                 ) : (
